@@ -53,9 +53,7 @@ const UserDetail = ({route, navigation}: any) => {
     const styles = StyleSheet.create({
         detailContainer: {
             display: 'flex',
-            flexDirection: 'column',
-            borderColor: '#023e8a',
-            backgroundColor: '#ade8f4'
+            flexDirection: 'column'
         },
         backContainer:{
             width: 50,
@@ -115,7 +113,9 @@ const UserDetail = ({route, navigation}: any) => {
             width: 200,
             borderRadius: 25,
             marginTop: 20,
-            alignSelf: 'center'
+            alignSelf: 'center',
+            borderWidth: 3,
+            borderColor: '#03045e'
         },
         followersContainer: {
             width: 600,

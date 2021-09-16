@@ -50,12 +50,15 @@ const styles = StyleSheet.create({
         marginLeft: -40
     },
     input: {
-        backgroundColor: 'white',
+        backgroundColor: '#caf0f8',
         width: 250,
         height: 50,
         marginTop: 10,
         marginLeft: 20,
-        borderRadius: 25
+        borderRadius: 25,
+        borderWidth: 1,
+        borderColor: '#023e8a',
+        padding: 10
     }
 })
 

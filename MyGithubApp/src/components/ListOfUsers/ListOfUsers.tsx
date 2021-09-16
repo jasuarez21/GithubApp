@@ -10,6 +10,7 @@ interface Props extends StackScreenProps<any, any> {}
 const List = ({navigation}: Props) => {
     const user: any = useSelector((store: any) => store.user);
     let usersList = user;
+    let testUser = undefined;
     const dispatch = useDispatch();
     useEffect(() => {
         usersList = user
@@ -20,7 +21,6 @@ const List = ({navigation}: Props) => {
         <Text style={styles.title}>Lista de usuarios</Text>
             <ScrollView style={styles.scrollContainer}>
             {
-                usersList ? (
                     usersList.map((elem: any) => (
                             <TouchableHighlight style={styles.userTarget} onPress={() => navigation.navigate('DetailOfUser', {userSelected: elem})}>
                                 <>
@@ -34,11 +34,15 @@ const List = ({navigation}: Props) => {
                                 </>
                             </TouchableHighlight>
                     ))
-                ):(
-                    <Text style={styles.errorMessage}>No hay resultados</Text>
-                )
             }
-            </ScrollView>  
+            {
+                usersList[0]?.login === undefined ? (
+                    <Text style={styles.errorMessage}>No hay resultados</Text>
+                ):(
+                    <Text style={styles.findUser}>Se han encontrado {usersList.length} resultados</Text>
+                )
+            }  
+            </ScrollView>
         </View>  
     )
 }
@@ -46,17 +50,32 @@ const List = ({navigation}: Props) => {
 const styles = StyleSheet.create({
     scrollContainer: {
         width: 500,
-        height: 1000,
-        marginTop: 30
+        height: 'auto',
+        marginTop: 20
     },
     backgroundView: {
-        backgroundColor: '#ade8f4'
+        height: 'auto',
+    },
+    errorMessage:{
+        fontSize: 20,
+        color: '#03045e',
+        textAlign: 'center'
+    },
+    findUser: {
+        fontSize: 12,
+        color: '#03045e',
+        position: 'absolute',
+        marginTop: -5,
+        marginLeft: 280
     },
     title: {
         fontSize: 18,
         marginTop: 50,
+        marginLeft: 30,
         color: '#03045e',
-        textAlign: 'center'
+        borderBottomWidth: 1,
+        width: 400,
+        borderBottomColor: '#03045e'
     },
     photo: {
         height: 100,
@@ -67,13 +86,14 @@ const styles = StyleSheet.create({
     username: {
         fontSize: 18,
         marginTop: 50,
+        textTransform: 'uppercase',
         color: '#03045e'
     },
     userTarget: {
         height: 150,
         width: 400,
         marginLeft: 30,
-        marginTop: 10,
+        marginTop: 20,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
