@@ -7,8 +7,6 @@ export function searchUser(user: string){
         try {
             const {data} = await axios.get('https://api.github.com/users')
             const searchedUser: [] = data.filter((elem: any) => elem.login.includes(user))
-            console.log("action")
-            console.log(searchedUser)
             dispatch({
                 type: actionTypes.GET_USERS,
                 data: searchedUser,
