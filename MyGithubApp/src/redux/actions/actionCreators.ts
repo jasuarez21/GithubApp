@@ -6,9 +6,11 @@ export function searchUser(user: string){
     return async (dispatch: Dispatch) => {
         try {
             const {data} = await axios.get('https://api.github.com/users')
-            const searchedUser = data.filter((elem: any) => elem.login.includes(user))
+            const searchedUser: [] = data.filter((elem: any) => elem.login.includes(user))
+            console.log("action")
+            console.log(searchedUser)
             dispatch({
-                type: actionTypes.GET_USER,
+                type: actionTypes.GET_USERS,
                 data: searchedUser,
             })
         } catch (error) {

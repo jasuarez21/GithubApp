@@ -26,7 +26,6 @@ const Header = ({navigation}: Props) => {
             defaultValue={userSearch}
             value={userSearch}
             />
-            <Text>{user}</Text>
         </View>
     )
 }
