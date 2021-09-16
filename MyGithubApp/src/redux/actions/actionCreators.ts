@@ -2,14 +2,14 @@ import axios from 'axios';
 import actionTypes from './actionTypes';
 import {Dispatch} from 'redux';
 
-export function getUsers(user: string){
-    console.log(user)
+export function searchUser(user: string){
     return async (dispatch: Dispatch) => {
-        try{
-            const {data} = await axios.get('the url')
+        try {
+            const {data} = await axios.get('https://api.github.com/users')
+            const searchedUser = data.filter((elem: any) => elem.login.includes(user))
             dispatch({
                 type: actionTypes.GET_USER,
-                data,
+                data: searchedUser,
             })
         } catch (error) {
             dispatch({
