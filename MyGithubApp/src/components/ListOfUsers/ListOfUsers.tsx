@@ -15,31 +15,31 @@ const List = ({navigation}: Props) => {
         usersList = user
     }, [user])
     return ( 
-        <>
+        <View style={styles.backgroundView}>
         <Header navigation={undefined} route={undefined} />
         <Text style={styles.title}>Lista de usuarios</Text>
-        <ScrollView style={styles.scrollContainer}>
-        {
-            usersList ? (
-                usersList.map((elem: any) => (
-                        <TouchableHighlight style={styles.userTarget} onPress={() => navigation.navigate('DetailOfUser', {userSelected: elem})}>
-                            <>
-                                <Image
-                                    style={styles.photo}
-                                    source={{
-                                        uri: elem?.avatar_url,
-                                    }}
-                                />
-                                    <Text style={styles.username}>{elem?.login}</Text>
-                            </>
-                        </TouchableHighlight>
-                ))
-            ):(
-                <Text style={styles.errorMessage}>No hay resultados</Text>
-            )
-        }
-        </ScrollView>  
-        </>  
+            <ScrollView style={styles.scrollContainer}>
+            {
+                usersList ? (
+                    usersList.map((elem: any) => (
+                            <TouchableHighlight style={styles.userTarget} onPress={() => navigation.navigate('DetailOfUser', {userSelected: elem})}>
+                                <>
+                                    <Image
+                                        style={styles.photo}
+                                        source={{
+                                            uri: elem?.avatar_url,
+                                        }}
+                                    />
+                                        <Text style={styles.username}>{elem?.login}</Text>
+                                </>
+                            </TouchableHighlight>
+                    ))
+                ):(
+                    <Text style={styles.errorMessage}>No hay resultados</Text>
+                )
+            }
+            </ScrollView>  
+        </View>  
     )
 }
 
@@ -48,6 +48,9 @@ const styles = StyleSheet.create({
         width: 500,
         height: 1000,
         marginTop: 30
+    },
+    backgroundView: {
+        backgroundColor: '#ade8f4'
     },
     title: {
         fontSize: 18,
@@ -77,7 +80,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 25,
         borderColor: '#023e8a',
-        backgroundColor: '#ade8f4'
+        backgroundColor: '#caf0f8'
     },
     erroMessage: {
         color: 'red',

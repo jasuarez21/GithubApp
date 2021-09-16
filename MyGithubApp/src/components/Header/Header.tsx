@@ -17,6 +17,12 @@ const Header = ({navigation}: Props) => {
     }
     return (
         <View style={styles.headerContainer}>
+            <Image
+                style={styles.logo}
+                source={{
+                    uri: "https://i.postimg.cc/W4pH9FN9/icons8-github-50.png",
+                }}
+            />  
             <TextInput
             style={styles.input}
             testID='searchInput'
@@ -36,6 +42,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignSelf: 'center',
         marginTop: 15
+    },
+    logo: {
+        height: 50,
+        width: 50,
+        marginTop: 10,
+        marginLeft: -40
     },
     input: {
         backgroundColor: 'white',

@@ -18,8 +18,15 @@ const UserDetail = ({route, navigation}: any) => {
     }, [])
     return (
         <ScrollView style={styles.detailContainer}>
-        <TouchableHighlight  onPress={() => navigation.navigate('ListOfUsers', {})}>                          
-            <Text>Volver a la lista</Text>
+        <TouchableHighlight  
+            style={styles.backContainer}
+            onPress={() => navigation.navigate('ListOfUsers', {})}>
+        <Image
+                style={styles.iconBack}
+                source={{
+                    uri: "https://img.icons8.com/color/48/000000/circled-left-2--v1.png",
+                }}
+            />                          
         </TouchableHighlight>
             <Text style={styles.username}>{userSelected?.login}</Text>
             <Image
@@ -50,12 +57,26 @@ const UserDetail = ({route, navigation}: any) => {
             borderColor: '#023e8a',
             backgroundColor: '#ade8f4'
         },
+        backContainer:{
+            width: 50,
+            position: 'absolute',
+            marginTop: 10,
+            marginLeft: 10
+        },
+        iconBack: {
+            height: 40,
+            width: 40
+        },
         repoContainer: {
             backgroundColor: '#caf0f8',
             marginTop: 10,
             width: 350,
+            height: 'auto',
+            padding: 10,
             alignSelf: 'center',
-            borderRadius: 15
+            borderRadius: 15,
+            borderWidth: 1,
+            borderColor: '#023e8a'
         },
         titleRepo: {
             fontSize: 18,
@@ -63,7 +84,8 @@ const UserDetail = ({route, navigation}: any) => {
             borderBottomColor: '#023e8a',
             color: '#023e8a',
             marginLeft: 10,
-            marginRight: 30
+            marginRight: 30,
+            marginTop: 20
         },
         nameRepo: {
             fontSize: 16,
