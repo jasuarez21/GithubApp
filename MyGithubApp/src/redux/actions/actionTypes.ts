@@ -1,4 +1,6 @@
 export default {
     GET_USERS: 'GET_USERS',
+    GET_FOLLOWERS: 'GET_FOLLOWERS',
+    GET_REPOS: 'GET_REPOS',
     ERROR: 'ERROR'
 }

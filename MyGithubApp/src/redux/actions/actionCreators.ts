@@ -18,3 +18,35 @@ export function searchUser(user: string){
         }
     }
 }
+
+export function getFollowers(url: string){
+    return async (dispatch: Dispatch) => {
+        try {
+            const {data} = await axios.get(url)
+            dispatch({
+                type: actionTypes.GET_FOLLOWERS,
+                data,
+            })
+        } catch (error) {
+            dispatch({
+                type: actionTypes.ERROR
+            })
+        }
+    }
+}
+
+export function getRepos(url: string){
+    return async (dispatch: Dispatch) => {
+        try {
+            const {data} = await axios.get(url)
+            dispatch({
+                type: actionTypes.GET_REPOS,
+                data,
+            })
+        } catch (error) {
+            dispatch({
+                type: actionTypes.ERROR
+            })
+        }
+    }
+}
