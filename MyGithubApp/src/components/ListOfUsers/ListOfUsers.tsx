@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {StackScreenProps} from '@react-navigation/stack';
 import Header from '../Header/Header';
 import {TouchableHighlight, View, Text, TextInput, SafeAreaView, ScrollView,  StyleSheet, Image} from 'react-native';
@@ -10,8 +10,6 @@ interface Props extends StackScreenProps<any, any> {}
 const List = ({navigation}: Props) => {
     const user: any = useSelector((store: any) => store.user);
     let usersList = user;
-    let testUser = undefined;
-    const dispatch = useDispatch();
     useEffect(() => {
         usersList = user
     }, [user])
@@ -25,6 +23,7 @@ const List = ({navigation}: Props) => {
                             <TouchableHighlight style={styles.userTarget} onPress={() => navigation.navigate('DetailOfUser', {userSelected: elem})}>
                                 <>
                                     <Image
+                                        testID = {elem?.login}
                                         style={styles.photo}
                                         source={{
                                             uri: elem?.avatar_url,

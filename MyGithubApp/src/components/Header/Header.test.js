@@ -32,7 +32,7 @@ describe('When invoked a Header component', () => {
             }
         }
     })
-    test('Should render the lobby page', () => {
+    test('Should render the header page', () => {
         const header = render(<Provider store={store}><Header navigation={navigation} route={route} /></Provider>)
         expect(header).toMatchSnapshot()
     })
