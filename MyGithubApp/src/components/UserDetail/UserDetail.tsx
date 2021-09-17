@@ -43,6 +43,7 @@ const UserDetail = ({route, navigation}: any) => {
             style={styles.backContainer}
             onPress={() => navigation.navigate('ListOfUsers', {})}>
         <Image
+                testID='backButton'
                 style={styles.iconBack}
                 source={{
                     uri: "https://img.icons8.com/color/48/000000/circled-left-2--v1.png",

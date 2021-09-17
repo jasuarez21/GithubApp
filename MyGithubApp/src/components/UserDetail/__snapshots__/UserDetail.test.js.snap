@@ -1,0 +1,250 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When invoked a UserDetail component Should render the UserDetail page 1`] = `
+<RCTScrollView
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+    }
+  }
+>
+  <View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "marginLeft": 10,
+          "marginTop": 10,
+          "position": "absolute",
+          "width": 50,
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://img.icons8.com/color/48/000000/circled-left-2--v1.png",
+          }
+        }
+        style={
+          Object {
+            "height": 40,
+            "width": 40,
+          }
+        }
+        testID="backButton"
+      />
+    </View>
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "borderBottomColor": "#023e8a",
+          "borderBottomWidth": 1,
+          "color": "#023e8a",
+          "fontSize": 28,
+          "marginTop": 20,
+          "textTransform": "uppercase",
+        }
+      }
+    />
+    <Image
+      source={
+        Object {
+          "uri": undefined,
+        }
+      }
+      style={
+        Object {
+          "alignSelf": "center",
+          "borderColor": "#03045e",
+          "borderRadius": 25,
+          "borderWidth": 3,
+          "height": 200,
+          "marginTop": 20,
+          "width": 200,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "fontSize": 20,
+          "marginTop": 20,
+        }
+      }
+    />
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "fontSize": 20,
+          "marginTop": 20,
+        }
+      }
+    >
+      Tiene 
+      1
+       seguidores!
+    </Text>
+    <View
+      style={
+        Object {
+          "borderBottomColor": "#023e8a",
+          "borderBottomWidth": 1,
+          "display": "flex",
+          "flexDirection": "row",
+          "height": 50,
+          "justifyContent": "space-between",
+          "marginBottom": 10,
+          "marginLeft": 5,
+          "marginTop": 5,
+          "width": 450,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#023e8a",
+            "fontSize": 18,
+            "marginLeft": 10,
+            "marginRight": 30,
+            "marginTop": 20,
+          }
+        }
+      >
+        REPOSITORIOS
+      </Text>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignSelf": "flex-end",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://i.postimg.cc/WbLjCbqG/icons8-back-32-2.png",
+            }
+          }
+          style={
+            Object {
+              "height": 30,
+              "marginBottom": 3,
+              "width": 30,
+            }
+          }
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#023e8a",
+            "fontSize": 18,
+            "marginLeft": 10,
+            "marginRight": 30,
+            "marginTop": 20,
+          }
+        }
+      >
+        1
+      </Text>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignSelf": "flex-end",
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "uri": "https://i.postimg.cc/wTsFr9Yd/icons8-more-than-50.png",
+            }
+          }
+          style={
+            Object {
+              "height": 30,
+              "marginBottom": 3,
+              "width": 30,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignSelf": "center",
+          "backgroundColor": "#caf0f8",
+          "borderColor": "#023e8a",
+          "borderRadius": 15,
+          "borderWidth": 1,
+          "height": "auto",
+          "marginTop": 10,
+          "padding": 10,
+          "width": 350,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "marginLeft": 20,
+            "textTransform": "uppercase",
+          }
+        }
+      >
+        GitHubApp
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 14,
+            "marginLeft": 20,
+          }
+        }
+      />
+      <Text
+        style={
+          Object {
+            "fontSize": 14,
+            "marginLeft": 20,
+          }
+        }
+      />
+    </View>
+  </View>
+</RCTScrollView>
+`;
