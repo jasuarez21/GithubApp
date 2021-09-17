@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`When invoked a Header component Should render the lobby page 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "center",
+      "display": "flex",
+      "flexDirection": "row",
+      "marginTop": 15,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://i.postimg.cc/W4pH9FN9/icons8-github-50.png",
+      }
+    }
+    style={
+      Object {
+        "height": 50,
+        "marginLeft": -40,
+        "marginTop": 10,
+        "width": 50,
+      }
+    }
+  />
+  <TextInput
+    autoCapitalize="none"
+    defaultValue=""
+    onChangeText={[Function]}
+    placeholder="Introduce el usuario"
+    style={
+      Object {
+        "backgroundColor": "#caf0f8",
+        "borderColor": "#023e8a",
+        "borderRadius": 25,
+        "borderWidth": 1,
+        "height": 50,
+        "marginLeft": 20,
+        "marginTop": 10,
+        "padding": 10,
+        "width": 250,
+      }
+    }
+    testID="searchInput"
+    value=""
+  />
+</View>
+`;

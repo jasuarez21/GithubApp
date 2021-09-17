@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1631869391672" clover="3.2.0">
+  <project timestamp="1631869391672" name="All files">
+    <metrics statements="34" coveredstatements="33" conditionals="9" coveredconditionals="6" methods="14" coveredmethods="13" elements="57" coveredelements="52" complexity="0" loc="34" ncloc="34" packages="3" files="6" classes="6"/>
+    <package name="components.Header">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="Header.tsx" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\components\Header\Header.tsx">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux.actions">
+      <metrics statements="16" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+      <file name="actionCreators.ts" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\redux\actions\actionCreators.ts">
+        <metrics statements="16" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+      </file>
+      <file name="actionTypes.ts" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\redux\actions\actionTypes.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="redux.reducers">
+      <metrics statements="9" coveredstatements="9" conditionals="9" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="followersReducer.ts" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\redux\reducers\followersReducer.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="reposReducer.ts" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\redux\reducers\reposReducer.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="userReducer.ts" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\redux\reducers\userReducer.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
