@@ -31,7 +31,7 @@
 
 <h3>Some views of app</h3>
 
-<img src="https://i.postimg.cc/XZ5Gw7mF/Android-Emulator-Pixel-3-XL-Edited-API-30-5554-17-09-2021-13-22-12.png"></img>
+<img src="https://i.postimg.cc/XZ5Gw7mF/Android-Emulator-Pixel-3-XL-Edited-API-30-5554-17-09-2021-13-22-12.png" width="60px" height="120px"></img>
 <img src="https://i.postimg.cc/cgMvbksL/Android-Emulator-Pixel-3-XL-Edited-API-30-5554-17-09-2021-13-22-21.png"></img>
 <img src="https://i.postimg.cc/QVh9TDb9/Android-Emulator-Pixel-3-XL-Edited-API-30-5554-17-09-2021-13-22-33.png"></img>
 <img src="https://i.postimg.cc/T5dKMjwq/Android-Emulator-Pixel-3-XL-Edited-API-30-5554-17-09-2021-13-22-47.png"></img>
