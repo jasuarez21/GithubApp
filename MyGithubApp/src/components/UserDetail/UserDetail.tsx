@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { StackScreenProps } from '@react-navigation/stack';
 import {useSelector, useDispatch} from 'react-redux';
 import { Text, TouchableHighlight, ScrollView, View, StyleSheet, Image} from 'react-native';
@@ -11,11 +11,32 @@ const UserDetail = ({route, navigation}: any) => {
     const followers: any = useSelector((store: any) => store.followers);
     const repos: any = useSelector((store: any) => store.repos);
     const {userSelected} = route.params;
+    let [init, setInit] = useState(0);
+    let [end, setEnd] = useState(5);
+    let [page, setPage] = useState(1)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getFollowers(userSelected.followers_url))
         dispatch(getRepos(userSelected.repos_url))
     }, [])
+    const nextPage = () => {
+        if(repos.slice( init + 5, end + 5).length === 0){
+            return false
+        } else {
+            setPage(page += 1)
+            setInit(init += 5);
+            setEnd(end += 5)
+        }
+    }
+    const previousPage = () => {
+        if(page === 1){
+            return false
+        } else {
+            setPage(page -= 1)
+            setInit(init-=5);
+            setEnd(end-=5)
+        }
+    }
     return (
         <ScrollView style={styles.detailContainer}>
         <TouchableHighlight  
@@ -37,9 +58,32 @@ const UserDetail = ({route, navigation}: any) => {
             />
             <Text style={styles.informationUser}>{userSelected?.html_url}</Text>
             <Text style={styles.informationUser}>Tiene {followers.length} seguidores!</Text>
-            <Text style={styles.titleRepo}>REPOSITORIOS</Text>
+            <View style={styles.reposHeaderContainer}>
+                <Text style={styles.titleRepo}>REPOSITORIOS</Text>
+                <TouchableHighlight  
+                    style={styles.backButton}
+                    onPress={() => previousPage()}>
+                    <Image
+                        style={styles.iconsPaginate}
+                        source={{
+                            uri: "https://i.postimg.cc/WbLjCbqG/icons8-back-32-2.png",
+                        }}
+                    />                          
+                </TouchableHighlight>
+                <Text style={styles.titleRepo}>{page}</Text>
+                <TouchableHighlight  
+                    style={styles.nextButton}
+                    onPress={() => nextPage()}>
+                    <Image
+                        style={styles.iconsPaginate}
+                        source={{
+                            uri: "https://i.postimg.cc/wTsFr9Yd/icons8-more-than-50.png",
+                        }}
+                    />                          
+                </TouchableHighlight>
+            </View>
             {
-                repos?.slice(0,5).map((repo: any) => (
+                repos.slice(init, end).map((repo: any) => (
                     <View style={styles.repoContainer}>
                         <Text style={styles.nameRepo}>{repo.name}</Text>
                         <Text style={styles.informationRepo}>{repo.description}</Text>
@@ -61,6 +105,29 @@ const UserDetail = ({route, navigation}: any) => {
             marginTop: 10,
             marginLeft: 10
         },
+        iconsPaginate: {
+            width: 30,
+            height: 30,
+            marginBottom: 3 
+        },
+        backButton: {
+            alignSelf: 'flex-end'
+        },
+        nextButton: {
+            alignSelf: 'flex-end'
+        },
+        reposHeaderContainer: {
+            height: 50,
+            width: 450,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            borderBottomWidth: 1,
+            borderBottomColor: '#023e8a',
+            marginBottom: 10,
+            marginLeft: 5,
+            marginTop: 5
+        },
         iconBack: {
             height: 40,
             width: 40
@@ -78,8 +145,6 @@ const UserDetail = ({route, navigation}: any) => {
         },
         titleRepo: {
             fontSize: 18,
-            borderBottomWidth: 1,
-            borderBottomColor: '#023e8a',
             color: '#023e8a',
             marginLeft: 10,
             marginRight: 30,
