@@ -65,6 +65,7 @@ const UserDetail = ({route, navigation}: any) => {
                     style={styles.backButton}
                     onPress={() => previousPage()}>
                     <Image
+                        testID="previousPage"
                         style={styles.iconsPaginate}
                         source={{
                             uri: "https://i.postimg.cc/WbLjCbqG/icons8-back-32-2.png",
@@ -76,6 +77,7 @@ const UserDetail = ({route, navigation}: any) => {
                     style={styles.nextButton}
                     onPress={() => nextPage()}>
                     <Image
+                        testID="nextPage"
                         style={styles.iconsPaginate}
                         source={{
                             uri: "https://i.postimg.cc/wTsFr9Yd/icons8-more-than-50.png",

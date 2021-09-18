@@ -36,10 +36,4 @@ describe('When invoked a UserDetail component', () => {
         const list = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>)
         expect(list).toMatchSnapshot()
     })
-    test('Should navigate to list of user when i click the back button', () => {
-        const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
-        const backButton = getByTestId('backButton');
-        fireEvent.press(backButton);
-        expect(navigation.navigate).toHaveBeenCalled();
-    })
 })

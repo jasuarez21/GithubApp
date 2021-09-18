@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1631871437581" clover="3.2.0">
-  <project timestamp="1631871437581" name="All files">
-    <metrics statements="71" coveredstatements="58" conditionals="15" coveredconditionals="7" methods="29" coveredmethods="24" elements="115" coveredelements="89" complexity="0" loc="71" ncloc="71" packages="5" files="8" classes="8"/>
+<coverage generated="1631965013158" clover="3.2.0">
+  <project timestamp="1631965013158" name="All files">
+    <metrics statements="71" coveredstatements="57" conditionals="15" coveredconditionals="7" methods="29" coveredmethods="23" elements="115" coveredelements="87" complexity="0" loc="71" ncloc="71" packages="5" files="8" classes="8"/>
     <package name="components.Header">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="Header.tsx" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\components\Header\Header.tsx">
@@ -32,38 +32,38 @@
       </file>
     </package>
     <package name="components.UserDetail">
-      <metrics statements="29" coveredstatements="17" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="6"/>
+      <metrics statements="29" coveredstatements="16" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="5"/>
       <file name="UserDetail.tsx" path="C:\Users\djose\Desktop\Programacion\GithubApp\MyGithubApp\src\components\UserDetail\UserDetail.tsx">
-        <metrics statements="29" coveredstatements="17" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="6"/>
+        <metrics statements="29" coveredstatements="16" conditionals="4" coveredconditionals="0" methods="10" coveredmethods="5"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
-        <line num="19" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
         <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="24" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="27" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="33" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
         <line num="66" count="0" type="stmt"/>
-        <line num="77" count="0" type="stmt"/>
-        <line num="88" count="2" type="stmt"/>
-        <line num="98" count="1" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
       </file>
     </package>
     <package name="redux.actions">
