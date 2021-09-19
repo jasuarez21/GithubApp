@@ -15,6 +15,9 @@ const UserDetail = ({route, navigation}: Props) => {
     let [init, setInit] = useState(0);
     let [end, setEnd] = useState(5);
     let [page, setPage] = useState(1)
+    let [followerInit, setFollowerInit] = useState(0);
+    let [followerEnd, setFollowerEnd] = useState(5);
+    let [followerPage, setFollowerPage] = useState(1)
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getFollowers(userSelected.followers_url))
@@ -38,6 +41,24 @@ const UserDetail = ({route, navigation}: Props) => {
             setEnd(end-=5)
         }
     }
+    const nextFollowerPage = () => {
+        if(followers.slice( followerInit + 5, followerEnd + 5).length === 0){
+            return false
+        } else {
+            setFollowerPage(followerPage += 1)
+            setFollowerInit(followerInit += 5);
+            setFollowerEnd(followerEnd += 5)
+        }
+    }
+    const previousFollowerPage = () => {
+        if(followerPage === 1){
+            return false
+        } else {
+            setFollowerPage(followerPage -= 1)
+            setFollowerInit(followerInit-=5);
+            setFollowerEnd(followerEnd-=5)
+        }
+    }
     return (
         <ScrollView style={styles.detailContainer}>
         <TouchableHighlight  
@@ -59,7 +80,6 @@ const UserDetail = ({route, navigation}: Props) => {
                 }}
             />
             <Text style={styles.informationUser}>{userSelected?.html_url}</Text>
-            <Text style={styles.informationUser}>Tiene {followers.length} seguidores!</Text>
             <View style={styles.reposHeaderContainer}>
                 <Text style={styles.titleRepo}>REPOSITORIOS</Text>
                 <TouchableHighlight  
@@ -93,8 +113,41 @@ const UserDetail = ({route, navigation}: Props) => {
                         <Text style={styles.informationRepo}>{repo.description}</Text>
                         <Text style={styles.informationRepo}>{repo.git_url}</Text>
                     </View>
-                ))                 
+                ))
             }
+            <View style={styles.followersContainer}>
+                <View style={styles.followersHeaderContainer}>
+                    <Text style={styles.titleRepo}>SEGUIDORES</Text>
+                    <TouchableHighlight  
+                            style={styles.backButton}
+                            onPress={() => previousFollowerPage()}>
+                            <Image
+                                testID="previousPage"
+                                style={styles.iconsPaginate}
+                                source={{
+                                    uri: "https://i.postimg.cc/WbLjCbqG/icons8-back-32-2.png",
+                                }}
+                            />                          
+                        </TouchableHighlight>
+                        <Text style={styles.titleRepo}>{followerPage}</Text>
+                        <TouchableHighlight  
+                            style={styles.nextButton}
+                            onPress={() => nextFollowerPage()}>
+                            <Image
+                                testID="nextPage"
+                                style={styles.iconsPaginate}
+                                source={{
+                                    uri: "https://i.postimg.cc/wTsFr9Yd/icons8-more-than-50.png",
+                                }}
+                            />                          
+                        </TouchableHighlight>
+                    </View>
+                    {
+                    followers.slice(followerInit, followerEnd).map((follower: any) => (
+                            <Text style={styles.followerName}>{follower.login}</Text>
+                    ))                                  
+                    }
+            </View>
         </ScrollView>
     )}
 
@@ -186,11 +239,31 @@ const UserDetail = ({route, navigation}: Props) => {
             borderWidth: 3,
             borderColor: '#03045e'
         },
-        followersContainer: {
-            width: 600,
-            height: 600,
+        followersHeaderContainer: {
+            width: 450,
+            height: 'auto',
+            marginBottom: 10,
+            marginLeft: 5,
+            marginTop: 5,
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            borderBottomWidth: 1,
+            borderBottomColor: '#023e8a',
+            padding: 5
+        },
+        followerName: {
+            textTransform: 'uppercase',
+            textAlign: 'center',
+            backgroundColor: '#caf0f8',
+            alignSelf: 'center',
+            borderRadius: 10,
+            fontSize: 20,
             borderWidth: 1,
-            borderColor: 'red'
+            height: 60,
+            width: 180,
+            margin: 5,
+            padding: 10
         }
     })
     
