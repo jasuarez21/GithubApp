@@ -38,7 +38,7 @@
 
 <h3>Test of frontend</h3>
 
-<img src=></img>
+<img src="https://i.postimg.cc/QtgGYLdc/Code-coverage-report-for-All-files-y-1-p-gina-m-s-Personal-Microsoft-Edge-18-09-2021-13-38-42.png"></img>
 
 
 
