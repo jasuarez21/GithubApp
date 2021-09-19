@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 import {StackScreenProps} from '@react-navigation/stack';
 import Header from '../Header/Header';
 import {TouchableHighlight, View, Text, ScrollView,  StyleSheet, Image} from 'react-native';
-import { User } from '../../models/User';
+import { User } from '../../interfaces/User';
 
 
 interface Props extends StackScreenProps<any, any> {}

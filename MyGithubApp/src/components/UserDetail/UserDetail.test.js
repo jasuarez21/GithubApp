@@ -4,7 +4,6 @@ import ConfigureStore from 'redux-mock-store';
 import * as actions from '../../redux/actions/actionCreators';
 import { Provider } from 'react-redux';
 import UserDetail from './UserDetail'
-import actionTypes from '../../redux/actions/actionTypes';
 
 jest.mock('../../redux/actions/actionCreators');
 

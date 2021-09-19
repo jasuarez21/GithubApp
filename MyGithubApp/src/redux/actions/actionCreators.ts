@@ -1,7 +1,7 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
 import { User } from '../../interfaces/User';
-import {Dispatch} from 'redux';
+import { Dispatch } from 'redux';
 
 
 export function searchUser(user: string){
