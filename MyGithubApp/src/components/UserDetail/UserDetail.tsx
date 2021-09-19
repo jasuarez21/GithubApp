@@ -12,9 +12,9 @@ const UserDetail = ({route, navigation}: Props) => {
     const followers: [User] = useSelector((store: any) => store.followers);
     const repos: any = useSelector((store: any) => store.repos);
     const {userSelected} = route.params;
-    let [init, setInit] = useState(0);
-    let [end, setEnd] = useState(5);
-    let [page, setPage] = useState(1)
+    let [repoInit, setRepoInit] = useState(0);
+    let [repoEnd, setRepoEnd] = useState(5);
+    let [repoPage, setRepoPage] = useState(1)
     let [followerInit, setFollowerInit] = useState(0);
     let [followerEnd, setFollowerEnd] = useState(5);
     let [followerPage, setFollowerPage] = useState(1)
@@ -23,22 +23,22 @@ const UserDetail = ({route, navigation}: Props) => {
         dispatch(getFollowers(userSelected.followers_url))
         dispatch(getRepos(userSelected.repos_url))
     }, [])
-    const nextPage = () => {
-        if(repos.slice( init + 5, end + 5).length === 0){
+    const nextRepoPage = () => {
+        if(repos.slice( repoInit + 5, repoEnd + 5).length === 0){
             return false
         } else {
-            setPage(page += 1)
-            setInit(init += 5);
-            setEnd(end += 5)
+            setRepoPage(repoPage += 1)
+            setRepoInit(repoInit += 5);
+            setRepoEnd(repoEnd += 5)
         }
     }
-    const previousPage = () => {
-        if(page === 1){
+    const previousRepoPage = () => {
+        if(repoPage === 1){
             return false
         } else {
-            setPage(page -= 1)
-            setInit(init-=5);
-            setEnd(end-=5)
+            setRepoPage(repoPage -= 1)
+            setRepoInit(repoInit-=5);
+            setRepoEnd(repoEnd-=5)
         }
     }
     const nextFollowerPage = () => {
@@ -84,21 +84,21 @@ const UserDetail = ({route, navigation}: Props) => {
                 <Text style={styles.titleRepo}>REPOSITORIOS</Text>
                 <TouchableHighlight  
                     style={styles.backButton}
-                    onPress={() => previousPage()}>
+                    onPress={() => previousRepoPage()}>
                     <Image
-                        testID="previousPage"
+                        testID="previousRepoPage"
                         style={styles.iconsPaginate}
                         source={{
                             uri: "https://i.postimg.cc/WbLjCbqG/icons8-back-32-2.png",
                         }}
                     />                          
                 </TouchableHighlight>
-                <Text style={styles.titleRepo}>{page}</Text>
+                <Text style={styles.titleRepo}>{repoPage}</Text>
                 <TouchableHighlight  
                     style={styles.nextButton}
-                    onPress={() => nextPage()}>
+                    onPress={() => nextRepoPage()}>
                     <Image
-                        testID="nextPage"
+                        testID="nextRepoPage"
                         style={styles.iconsPaginate}
                         source={{
                             uri: "https://i.postimg.cc/wTsFr9Yd/icons8-more-than-50.png",
@@ -107,7 +107,7 @@ const UserDetail = ({route, navigation}: Props) => {
                 </TouchableHighlight>
             </View>
             {
-                repos.slice(init, end).map((repo: any) => (
+                repos.slice(repoInit, repoEnd).map((repo: any) => (
                     <View style={styles.repoContainer}>
                         <Text style={styles.nameRepo}>{repo.name}</Text>
                         <Text style={styles.informationRepo}>{repo.description}</Text>
@@ -122,7 +122,7 @@ const UserDetail = ({route, navigation}: Props) => {
                             style={styles.backButton}
                             onPress={() => previousFollowerPage()}>
                             <Image
-                                testID="previousPage"
+                                testID="previousFollowerPage"
                                 style={styles.iconsPaginate}
                                 source={{
                                     uri: "https://i.postimg.cc/WbLjCbqG/icons8-back-32-2.png",
@@ -134,7 +134,7 @@ const UserDetail = ({route, navigation}: Props) => {
                             style={styles.nextButton}
                             onPress={() => nextFollowerPage()}>
                             <Image
-                                testID="nextPage"
+                                testID="nextFollowerPage"
                                 style={styles.iconsPaginate}
                                 source={{
                                     uri: "https://i.postimg.cc/wTsFr9Yd/icons8-more-than-50.png",

@@ -41,18 +41,32 @@ describe('When invoked a UserDetail component', () => {
         fireEvent(backButton, 'press', navigation.navigate);
         expect(navigation.navigate).toHaveBeenCalled();
     })
-    test('Should not call setEnd when i click previousPage button',  () => {
+    test('Should not call setRepoEnd when i click previousPage button',  () => {
         const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
-        const previousPage = getByTestId('previousPage');
-        let setEnd = jest.fn()
-        fireEvent(previousPage, 'press', setEnd);
-        expect(setEnd).not.toHaveBeenCalled();
+        const previousPage = getByTestId('previousRepoPage');
+        let setRepoEnd = jest.fn()
+        fireEvent(previousPage, 'press', setRepoEnd);
+        expect(setRepoEnd).not.toHaveBeenCalled();
     })
-    test('Should not call setEnd when i click nextPage button',  () => {
+    test('Should not call setRepoEnd when i click nextRepoPage button',  () => {
         const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
-        const nextPage = getByTestId('nextPage');
-        let setEnd = jest.fn()
-        fireEvent(nextPage, 'press', setEnd);
-        expect(setEnd).not.toHaveBeenCalled();
+        const nextRepoPage = getByTestId('nextRepoPage');
+        let setRepoEnd = jest.fn()
+        fireEvent(nextRepoPage, 'press', setRepoEnd);
+        expect(setRepoEnd).not.toHaveBeenCalled();
+    })
+    test('Should not call setFollowerEnd when i click nextFollowerPage button',  () => {
+        const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
+        const nextFollowerPage = getByTestId('nextFollowerPage');
+        let setFollowerEnd = jest.fn()
+        fireEvent(nextFollowerPage, 'press', setFollowerEnd);
+        expect(setFollowerEnd).not.toHaveBeenCalled();
+    })
+    test('Should not call setRepoEnd when i click previousFollowerPage button',  () => {
+        const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
+        const previousFollowerPage = getByTestId('previousFollowerPage');
+        let setFollowerEnd = jest.fn()
+        fireEvent(previousFollowerPage, 'press', setFollowerEnd);
+        expect(setFollowerEnd).not.toHaveBeenCalled();
     })
 })
