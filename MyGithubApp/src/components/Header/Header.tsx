@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {useDispatch} from 'react-redux';
 import {View, TextInput, StyleSheet, Image} from 'react-native';
 import {searchUser} from '../../redux/actions/actionCreators';
@@ -36,24 +37,24 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignSelf: 'center',
-        marginTop: 15
+        marginTop: hp('5%')
     },
     logo: {
-        height: 50,
-        width: 50,
-        marginTop: 10,
-        marginLeft: -40
+        height: hp('5.4%'),
+        width: wp('9%'),
+        marginTop: hp('1.5%'),
+        marginLeft: - wp('10%')
     },
     input: {
         backgroundColor: '#caf0f8',
-        width: 250,
-        height: 50,
-        marginTop: 10,
-        marginLeft: 20,
+        width: wp('50%'),
+        height: hp('5.4%'),
+        marginTop: hp('1.5%'),
+        marginLeft: wp('3%'),
         borderRadius: 25,
         borderWidth: 1,
         borderColor: '#023e8a',
-        padding: 10
+        padding: hp('1.5%')
     }
 })
 

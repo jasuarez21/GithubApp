@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import { StackScreenProps } from '@react-navigation/stack';
 import {useSelector, useDispatch} from 'react-redux';
 import { Text, TouchableHighlight, ScrollView, View, StyleSheet, Image} from 'react-native';
@@ -157,15 +158,15 @@ const UserDetail = ({route, navigation}: Props) => {
             flexDirection: 'column'
         },
         backContainer:{
-            width: 50,
+            width: wp('12%'),
             position: 'absolute',
-            marginTop: 10,
-            marginLeft: 10
+            marginTop: hp('1%'),
+            marginLeft: wp('2%')
         },
         iconsPaginate: {
-            width: 30,
-            height: 30,
-            marginBottom: 3 
+            width: wp('4%'),
+            height: hp('3%'),
+            marginBottom: hp('0.5%') 
         },
         backButton: {
             alignSelf: 'flex-end'
@@ -174,96 +175,96 @@ const UserDetail = ({route, navigation}: Props) => {
             alignSelf: 'flex-end'
         },
         reposHeaderContainer: {
-            height: 50,
-            width: 450,
+            height: hp('5.5%'),
+            width: wp('90%'),
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
             borderBottomWidth: 1,
             borderBottomColor: '#023e8a',
-            marginBottom: 10,
-            marginLeft: 5,
-            marginTop: 5
+            marginBottom: hp('1%'),
+            marginLeft: wp('2%'),
+            marginTop: hp('1%')
         },
         iconBack: {
-            height: 40,
-            width: 40
+            height: hp('6%'),
+            width: wp('12%')
         },
         repoContainer: {
             backgroundColor: '#caf0f8',
-            marginTop: 10,
-            width: 350,
+            marginTop: hp('1'),
+            width: wp('75%'),
             height: 'auto',
-            padding: 10,
+            padding: hp('1.3%'),
             alignSelf: 'center',
-            borderRadius: 15,
+            borderRadius: hp('1.2%'),
             borderWidth: 1,
             borderColor: '#023e8a'
         },
         titleRepo: {
-            fontSize: 18,
+            fontSize: hp('2%'),
             color: '#023e8a',
-            marginLeft: 10,
-            marginRight: 30,
-            marginTop: 20
+            marginLeft: hp('1%'),
+            marginRight: wp('5%'),
+            marginTop: hp('2%')
         },
         nameRepo: {
-            fontSize: 16,
-            marginLeft: 20,
+            fontSize: hp('1.8%'),
+            marginLeft: wp('4%'),
             textTransform: 'uppercase'
         },
         informationRepo: {
-            fontSize: 14,
-            marginLeft: 20,
+            fontSize: hp('1.6%'),
+            marginLeft: wp('4%'),
         },
         username: {
             color: '#023e8a',
-            fontSize: 28,
+            fontSize: hp('3%'),
             textTransform: 'uppercase',
             alignSelf: 'center',
-            marginTop: 20,
+            marginTop: hp('2.2%'),
             borderBottomWidth: 1,
             borderBottomColor: '#023e8a'
         },
         informationUser: {
             alignSelf: 'center',
-            marginTop: 20,
-            fontSize: 20
+            marginTop: hp('2.2%'),
+            fontSize: hp('2.3%')
         },
         photoDetail: {
-            height: 200,
-            width: 200,
-            borderRadius: 25,
-            marginTop: 20,
+            height: hp('23%'),
+            width: wp('43%'),
+            borderRadius: hp('2.5%'),
+            marginTop: hp('2.2%'),
             alignSelf: 'center',
             borderWidth: 3,
             borderColor: '#03045e'
         },
         followersHeaderContainer: {
-            width: 450,
+            width: wp('90%'),
             height: 'auto',
-            marginBottom: 10,
-            marginLeft: 5,
-            marginTop: 5,
+            marginBottom: hp('1%'),
+            marginLeft: wp('2%%'),
+            marginTop: hp('2%'),
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
             borderBottomWidth: 1,
             borderBottomColor: '#023e8a',
-            padding: 5
+            padding: hp('0.5%')
         },
         followerName: {
             textTransform: 'uppercase',
             textAlign: 'center',
             backgroundColor: '#caf0f8',
             alignSelf: 'center',
-            borderRadius: 10,
-            fontSize: 20,
+            borderRadius: hp('1%'),
+            fontSize: hp('2.2%'),
             borderWidth: 1,
-            height: 60,
-            width: 180,
-            margin: 5,
-            padding: 10
+            height: hp('7%'),
+            width: wp('38%'),
+            margin: hp('0.5%'),
+            padding: hp('1.3%')
         }
     })
     

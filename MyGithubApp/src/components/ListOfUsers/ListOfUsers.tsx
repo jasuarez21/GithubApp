@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {useSelector} from 'react-redux';
 import {StackScreenProps} from '@react-navigation/stack';
 import Header from '../Header/Header';
@@ -49,51 +50,51 @@ const List = ({navigation}: Props) => {
 
 const styles = StyleSheet.create({
     scrollContainer: {
-        width: 500,
+        width: 'auto',
         height: 'auto',
-        marginTop: 20
+        marginTop: wp('3%')
     },
     backgroundView: {
         height: 'auto',
     },
     errorMessage:{
-        fontSize: 20,
+        fontSize: hp('2%'),
         color: '#03045e',
         textAlign: 'center'
     },
     findUser: {
-        fontSize: 12,
+        fontSize: hp('1.4%'),
         color: '#03045e',
         position: 'absolute',
-        marginTop: -5,
-        marginLeft: 280
+        marginLeft: wp('50%')
     },
     title: {
-        fontSize: 18,
-        marginTop: 50,
-        marginLeft: 30,
+        fontSize: hp('2%'),
+        textTransform: 'uppercase',
+        marginTop: hp('6%'),
+        marginLeft: wp('6%'),
         color: '#03045e',
         borderBottomWidth: 1,
-        width: 400,
+        width: wp('85%'),
         borderBottomColor: '#03045e'
     },
     photo: {
-        height: 100,
-        width: 100,
+        height: hp('12%'),
+        width: wp('20%'),
         borderRadius: 50,
-        marginTop: 16
+        marginTop: hp('2%')
     },
     username: {
-        fontSize: 18,
-        marginTop: 50,
+        fontSize: hp('2%'),
+        marginTop: hp('6%'),
         textTransform: 'uppercase',
         color: '#03045e'
     },
     userTarget: {
-        height: 150,
-        width: 400,
-        marginLeft: 30,
-        marginTop: 20,
+        height: hp('17%'),
+        width: wp('85%'),
+        marginLeft: wp('6%'),
+        marginTop: hp('2.5%'),
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-around',
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     },
     erroMessage: {
         color: 'red',
-        fontSize: 24
+        fontSize: hp('2.2%')
     }
 })
 
