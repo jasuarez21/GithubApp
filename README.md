@@ -21,9 +21,8 @@
 - Typescript</br>
 - Redux</br>
 - Stack Navigator</br>
-- 100% tested with Jest</br>
+- Tested with Jest</br>
 - S.O.L.I.D</br>
-- SonarQube</br>
 
 
   <h3>EMULATOR</h3>
