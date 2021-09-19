@@ -3,12 +3,13 @@ import { StackScreenProps } from '@react-navigation/stack';
 import {useSelector, useDispatch} from 'react-redux';
 import { Text, TouchableHighlight, ScrollView, View, StyleSheet, Image} from 'react-native';
 import { getFollowers, getRepos } from '../../redux/actions/actionCreators';
+import { User } from '../../models/User';
 
 
 interface Props extends StackScreenProps<any, any> {}
 
-const UserDetail = ({route, navigation}: any) => {
-    const followers: any = useSelector((store: any) => store.followers);
+const UserDetail = ({route, navigation}: Props) => {
+    const followers: [User] = useSelector((store: any) => store.followers);
     const repos: any = useSelector((store: any) => store.repos);
     const {userSelected} = route.params;
     let [init, setInit] = useState(0);

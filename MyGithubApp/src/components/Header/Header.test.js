@@ -22,22 +22,14 @@ describe('When invoked a Header component', () => {
     let navigation;
     beforeEach(() => {
         jest.spyOn(actions, 'searchUser').mockReturnValueOnce({ type: actionTypes.GET_USERS });
-        navigation = {
-            navigate: jest.fn()
-        }
         dispatch = jest.fn();
-        route = {
-            params: {
-                userSelected : 'Pepe'
-            }
-        }
     })
     test('Should render the header page', () => {
-        const header = render(<Provider store={store}><Header navigation={navigation} route={route} /></Provider>)
+        const header = render(<Provider store={store}><Header /></Provider>)
         expect(header).toMatchSnapshot()
     })
     test('Should search and user when i write in input', async () => {
-        const { getByTestId } = render(<Provider store={store}><Header navigation={navigation} route={route} /></Provider>);
+        const { getByTestId } = render(<Provider store={store}><Header /></Provider>);
         const searchInput = getByTestId('searchInput');
         const userSearched = jest.fn();
         await fireEvent.changeText(searchInput, userSearched);

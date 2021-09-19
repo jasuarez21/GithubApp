@@ -1,17 +1,12 @@
 import React, {useState} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import {StackScreenProps} from '@react-navigation/stack';
-import {TouchableHighlight, View, Text, TextInput, SafeAreaView, ScrollView,  StyleSheet, Image} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {View, TextInput, StyleSheet, Image} from 'react-native';
 import {searchUser} from '../../redux/actions/actionCreators';
 
-
-interface Props extends StackScreenProps<any, any> {}
-
-const Header = ({navigation}: Props) => {
-    const user = useSelector((store: any) => store.user);
+const Header = () => {
     const dispatch = useDispatch();
     let [userSearch, setUserSearch] = useState('');
-    function userSearched(user){
+    function userSearched(user: string){
         setUserSearch(user);
         dispatch(searchUser(user))
     }

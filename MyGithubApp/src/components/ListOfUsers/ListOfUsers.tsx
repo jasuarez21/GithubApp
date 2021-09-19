@@ -2,24 +2,25 @@ import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {StackScreenProps} from '@react-navigation/stack';
 import Header from '../Header/Header';
-import {TouchableHighlight, View, Text, TextInput, SafeAreaView, ScrollView,  StyleSheet, Image} from 'react-native';
+import {TouchableHighlight, View, Text, ScrollView,  StyleSheet, Image} from 'react-native';
+import { User } from '../../models/User';
 
 
 interface Props extends StackScreenProps<any, any> {}
 
 const List = ({navigation}: Props) => {
-    const user: any = useSelector((store: any) => store.user);
-    let usersList = user;
+    const user: [User] = useSelector((store: any) => store.user);
+    let usersList: [User] = user;
     useEffect(() => {
         usersList = user
     }, [user])
     return ( 
         <View style={styles.backgroundView}>
-        <Header navigation={undefined} route={undefined} />
+        <Header />
         <Text style={styles.title}>Lista de usuarios</Text>
             <ScrollView style={styles.scrollContainer}>
             {
-                    usersList.map((elem: any) => (
+                    usersList.map((elem: User) => (
                             <TouchableHighlight style={styles.userTarget} onPress={() => navigation.navigate('DetailOfUser', {userSelected: elem})}>
                                 <>
                                     <Image
