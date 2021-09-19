@@ -1,6 +1,6 @@
 import axios from 'axios';
 import actionTypes from './actionTypes';
-import { User } from '../../models/User';
+import { User } from '../../interfaces/User';
 import {Dispatch} from 'redux';
 
 

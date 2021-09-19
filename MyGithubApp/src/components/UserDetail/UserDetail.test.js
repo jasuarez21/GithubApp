@@ -36,4 +36,24 @@ describe('When invoked a UserDetail component', () => {
         const list = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>)
         expect(list).toMatchSnapshot()
     })
+    test('Should call navigation.navigate when i click backButton button',  () => {
+        const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
+        const backButton = getByTestId('backButton');
+        fireEvent(backButton, 'press', navigation.navigate);
+        expect(navigation.navigate).toHaveBeenCalled();
+    })
+    test('Should not call setEnd when i click previousPage button',  () => {
+        const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
+        const previousPage = getByTestId('previousPage');
+        let setEnd = jest.fn()
+        fireEvent(previousPage, 'press', setEnd);
+        expect(setEnd).not.toHaveBeenCalled();
+    })
+    test('Should not call setEnd when i click nextPage button',  () => {
+        const { getByTestId } = render(<Provider store={store}><UserDetail navigation={navigation} route={route} /></Provider>);
+        const nextPage = getByTestId('nextPage');
+        let setEnd = jest.fn()
+        fireEvent(nextPage, 'press', setEnd);
+        expect(setEnd).not.toHaveBeenCalled();
+    })
 })
