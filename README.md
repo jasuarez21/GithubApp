@@ -42,10 +42,5 @@
 <img src=></img>
 
 
-<h3>SonarQube in app</h3>
-
-<img src=></img>
-
-
 
 
