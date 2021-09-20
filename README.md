@@ -13,7 +13,7 @@
 1- Download the project</br>
 2- Open project in your code editor</br>
 3- Run command "npm install" for install dependencies</br>
-4- Open frontend folder and run the command "npx react-native run-start"</br>
+4- Open MyGithubApp folder and run the command "npx react-native run-start"</br>
 
   <h3>FRONTEND</h3>
 - React-Native</br>
